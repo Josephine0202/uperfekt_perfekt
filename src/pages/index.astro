@@ -15,11 +15,30 @@ import tyndfilm from "../assets/images/tynd-film.jpg";
 import "../styles/tobii.min.css";
 ---
 <MainLayout title="Titel">
-	<article class="p-4 md:p-0">
-		<section class="max-w-xl mx-auto mt-32 prose" id="titel">
-			<h2 class="text-6xl md:text-9xl text-center">Uperfekt er perfekt</h2>
-		</section>
-		<section class="max-w-4xl mx-auto mt-32" id="herovideo">
+<article class="p-4 md:p-0">
+	<section class="whitespace-nowrap overflow-x-hidden pt-10 pb-10 bg-black text-white text-4xl font-bold py-4">
+    <div class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-6 mereanimate">
+        <span>Uperfekt er perfekt</span>
+		<span>Uperfekt er perfekt</span>
+		 <span>Uperfekt er perfekt</span>
+		<span>Uperfekt er perfekt</span>
+		 <span>Uperfekt er perfekt</span>
+		<span>Uperfekt er perfekt</span>
+		 <span>Uperfekt er perfekt</span>
+		<span>Uperfekt er perfekt</span>
+    </div>
+    <div class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-6 " aria-hidden="true">
+        <span>Uperfekt er perfekt</span>
+		<span>Uperfekt er perfekt</span>
+		 <span>Uperfekt er perfekt</span>
+		<span>Uperfekt er perfekt</span>
+		 <span>Uperfekt er perfekt</span>
+		<span>Uperfekt er perfekt</span>
+		 <span>Uperfekt er perfekt</span>
+		<span>Uperfekt er perfekt</span>
+    </div>
+    </section>
+		<section class="max-w-4xl mx-auto mt-32 fotoinview" id="herovideo">
 			<video width="1280" height="960" autoplay muted loop>
 				<source src="pierre-falcke-video.mp4" type="video/mp4">
 			</video> 
@@ -28,7 +47,7 @@ import "../styles/tobii.min.css";
 			<p class="text-xl">Pierre Falcke. Du ved formentligt ikke hvem han er. Men indtil for kort tid siden, så du hans værker et par gange om dagen, hver dag, året rundt. Pierre Falcke var en af verdens bedst sælgende stock-fotografer, og han solgte over 2 millioner fotos om året. Men Pierre kunne ikke drømme om at bruge sine egne fotos - faktisk kan han ikke fordrage sit eget arbejde.</p>
 			<div>
 				<a href="pierre.jpeg" class="lightbox">
-					<Image src={pierre} alt="" class="not-prose"/>
+					<Image src={pierre} alt="" loading="lazy" class="opacity-0 timelineanimation" id="timelineanimationimage">
 					<figcaption>Pierre Falcke, selvportræt</figcaption>
 				</a>
 			</div>
@@ -44,7 +63,7 @@ import "../styles/tobii.min.css";
 		</section>
 		<section class="max-w-4xl mx-auto my-32 prose border border-double border-black p-8" id="hvaderstockfotos">
 			<h2 class="text-2xl">Hvad er stock-fotos?</h2>
-			<div class="grid grid-cols-3 gap-4">
+			<div class="grid grid-cols-3 gap-4" id="stagger">
 				<div>
 					<p>Stock-fotos er billeder, der kan købes fra et foto-website. De bruges af aviser, til markedsføring og som indhold på websites. En licens til at bruge et foto koster typisk mellem 10 og 100 kroner, alt afhængig af hvad de skal bruges til.</p>
 					<Image src={arbejde} alt="" />
@@ -75,17 +94,19 @@ import "../styles/tobii.min.css";
 				<p>Han søgte inspiration i analog fotografering, i Lomo-bevægelsen, Glitch art og polaroid fotografering, og begyndte stille og roligt at skabe sig en ny stil - en stil med fokus på det uperfekte, og hvor der er et uforudsigeligt element i det at tage billeder.</p>
 			</div>
 			<div class="grid grid-cols-2 gap-4 max-w-4xl mx-auto my-8 items-center prose">
-				<div>
-					<a href="glitch.jpg" class="lightbox">
-						<Image src={glitch} alt="" class="not-prose" />
-						<figcaption>Glitch kunst</figcaption>
-					</a>
-				</div>
-				<div>
-					<a href="lomo-smena-17.jpg" class="lightbox">
-						<Image src={smena} alt="" class="not-prose" />
-						<figcaption>Dobbelteksponering med Smena</figcaption>
-					</a>
+		<section class="scrollzoom overflow-clip">
+			<a href="glitch.jpg" class="lightbox">
+	     <Image src={glitch} class="scrollzoomimg w-full" alt="">
+		  <figcaption>Glitch kunst</figcaption>
+		  </a>
+	    </section> 
+		<section class="scrollzoom overflow-clip">
+			<a href="lomo-smena-17.jpg" class="lightbox">
+	     <Image src={smena} class="scrollzoomimg w-full" alt="">
+		  <figcaption>Dobbelteksponering med Smena</figcaption>
+		  </a>
+	    </section> 
+		</div>
 				</div>
 			</div>
 			<div class="max-w-xl mx-auto prose">
@@ -112,11 +133,10 @@ import "../styles/tobii.min.css";
 				</div>
 			</div>
 		</section>
-		<section id="nybegyndelse">
-			<div class="max-w-xl mx-auto my-32 prose">
-				<h2 class="text-4xl">En ny begyndelse</h2>
-				<p>Men Pierre er glad for sin beslutning. Indkomsten er lavere nu, men han har stadig lidt penge på kontoen, og studerer nu kunstfotografering på fotoskolen Fatamorgana. Han glæder sig over hver dags kunstneriske eksperimenter, og er for første gang i sit liv rigtig stolt af sit arbejde. Som Pierre selv udtrykker det: <span class="italic">“Det interessante ligger i fejlen. Et foto med masser af fejl er interessant. Jeg eksperimenterer med udstyr og teknik, og skaber nye visuelle udtryk. Det uperfekte er perfekt.”</span></p>
-			</div>
+			<section class="bg-teal-100 mt-8 h-screen w-full bg-cover bg-center" style="background-image: url('/tynd-film.jpg');">
+				<h2 class="parallaxelement max-w-xl mx-auto p-10 bg-slate-50 opacity-70 font-bold text-4xl">En ny begyndelse</h2>
+	<p class="parallaxelement max-w-xl mx-auto p-10 bg-slate-50 opacity-70 text-xl">Men Pierre er glad for sin beslutning. Indkomsten er lavere nu, men han har stadig lidt penge på kontoen, og studerer nu kunstfotografering på fotoskolen Fatamorgana. Han glæder sig over hver dags kunstneriske eksperimenter, og er for første gang i sit liv rigtig stolt af sit arbejde. Som Pierre selv udtrykker det: <span class="italic">“Det interessante ligger i fejlen. Et foto med masser af fejl er interessant. Jeg eksperimenterer med udstyr og teknik, og skaber nye visuelle udtryk. Det uperfekte er perfekt.”</span></p>
+	</section>
 			<div class="grid grid-cols-2 gap-4 max-w-4xl mx-auto my-8 items-center prose">
 				<div>
 					<a href="over-out-icm.jpeg" class="lightbox">
@@ -142,9 +162,77 @@ import "../styles/tobii.min.css";
 				</div>
 			</div>
 		</section>
+		<!-- Progress-bar placeret i toppen af sitet -->
+	<div class="progress-bar h-4 fixed w-full bg-gradient-to-r from-white to-black left-0 origin-top-left top-0 right-0"></div>
 	</article>
 </MainLayout>
+<script>
+	/* Import af Motion One bibliotek */
+	import { animate, stagger, inView, scroll } from "motion";
+
+	/* js stumper kommer herefter */
+	scroll( animate(".progress-bar", { scaleX: [0, 1] }));
+	animate( "body", { opacity: [ 0, 1] }, { duration: 1 })
+		/* Mere animate() */
+	animate(".mereanimate", 
+	{ opacity: [ 0.4, 1, 0, 0.8], scale: [0.95, 1, 0.7, 0.9], rotate: [0, 180, 270, 360], x: [0, 50, 0, -50 ], y:[0, 50, 0, -50 ]}, 
+	{ delay: 2, duration: 4, repeatType: "reverse", repeat: Infinity }
+	)
+		/* inView animation */
+	inView( ".fotoinview" , () =>{
+	animate( ".fotoinview", { x: [-2000, 0 ] }, { duration: 3 })
+	})
+	/* Stagger animation */
+	inView( "#stagger" , () =>{
+		animate(
+		"#stagger img",
+		{ opacity: [0, 1] },
+		{ 
+			delay: stagger(1, { startDelay: 1 })
+		}
+		)
+	})
+		/* Timeline animation */
+	inView( "#timelineanimationimage" , () =>{
+		const timelineanimation = [
+		[".timelineanimation", { opacity: 1 }, { duration: 5 }],
+		[".timelineanimation", { transform: "rotate(360deg)" }, { duration: 3 }],
+		[".timelineanimation", { transform: "scale(1.5)" }, { duration: 0.5 }],
+		[".timelineanimation", { transform: "scale(1)" }, { duration: 1 }],
+		[".timelineanimation", { opacity: 0.3 }, { duration: 5 }],
+		]
+		animate( timelineanimation, { duration: 10, repeat: 2 } );
+	})
+		inView( ".inviewreturn", (element) => {
+  	animate(
+      element,
+      { rotate: [180, 0] },
+      { delay: 1, duration: 2 },
+  	) 
+    return () => {
+      animate(
+       element,
+        { rotate: 180 }
+      )
+  	}
+	}) 
+	scroll(
+    animate(".scrollzoomimg", { 
+        scale: [1, 1.5]    
+    }),
+    { 
+      target: document.querySelector(".scrollzoom"),
+      offset: ["0.75 end", "end end"]
+    }
+    )
+	/* Parallax med tekstboks */ 
+	scroll(animate(".parallaxelement", { y: [50, 500] }), {
+		target: document.querySelector(".parallaxelement"),
+	});
+	</script>
+
 <script is:inline src="/tobii.min.js"></script>
+
 <script defer>
 	const tobii = new Tobii(); 
 </script>
